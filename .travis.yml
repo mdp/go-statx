@@ -1,0 +1,27 @@
+language: go
+go:
+  - 1.6
+before_install:
+  - go get github.com/laher/goxc
+script:
+  - go test -v
+after_success:
+  - cp README.md cmd/statx/.
+  - goxc -wd cmd/statx -bc="linux, windows, darwin,amd64" -d .
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file:
+    - snapshot/statx_darwin_amd64.zip
+    - snapshot/statx_windows_386.zip
+    - snapshot/statx_windows_amd64.zip
+    - snapshot/statx_linux_386.tar.gz
+    - snapshot/statx_linux_amd64.tar.gz
+    - snapshot/statx_linux_arm.tar.gz
+    - snapshot/statx_snapshot_amd64.deb
+    - snapshot/statx_snapshot_armhf.deb
+    - snapshot/statx_snapshot_i386.deb
+  skip_cleanup: true
+  on:
+    tags: true
+
