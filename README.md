@@ -3,7 +3,7 @@
 ## Installation
 
 
-### The the CLI
+### The CLI
 
 `go get -u github.com/mdp/go-statx/...`
 
