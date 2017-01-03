@@ -20,13 +20,13 @@
 Enter verification code from StatX and if successful you will receive API keys
 
 Get a list of groups  
-`statx list --apikey 12345abcdef --authtoken yourauthtoken`
+`statx --apikey 12345abcdef --authtoken yourauthtoken list`
 
 Get a list of Stats in a group  
-`statx list --apikey 12345abcdef --authtoken yourauthtoken --group groupid`
+`statx --apikey 12345abcdef --authtoken yourauthtoken list --group groupid`
 
 Update the value of a Stat  
-`statx update --apikey 12345abcdef --authtoken yourauthtoken --group groupid --stat statid --value 47`
+`statx --apikey 12345abcdef --authtoken yourauthtoken update --group groupid --stat statid --value 47`
 
 ### Library
 
